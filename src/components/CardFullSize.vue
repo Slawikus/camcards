@@ -6,7 +6,7 @@
 
     <div class="fixed-center">
       <q-card-section>
-        <q-icon :name="iconPrefix + card.icon" class="full-width" size="24rem"/>
+        <q-icon :name="iconPrefix + card.icon" class="full-width" size="22rem"/>
       </q-card-section>
 
       <q-card-section>
