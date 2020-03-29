@@ -5,11 +5,11 @@
     </q-card-section>
 
     <q-card-section>
-      <q-icon :name="iconPrefix + icon" class="full-width" size="24rem"/>
+      <q-icon :name="iconPrefix + card.icon" class="full-width" size="24rem"/>
     </q-card-section>
 
     <q-card-section>
-      <div class="text-center text-uppercase text-h4">{{ caption }}</div>
+      <div class="text-center text-uppercase text-h4">{{ card.caption }}</div>
     </q-card-section>
   </q-card>
 </template>
@@ -19,13 +19,8 @@
     name: 'CardFullSize',
 
     props: {
-      icon: {
-        type: String,
-        required: true
-      },
-
-      caption: {
-        type: String,
+      card: {
+        type: Object,
         required: true
       },
     },

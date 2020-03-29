@@ -1,23 +1,54 @@
 <template>
   <q-page padding>
-    <div v-for="card in cards" :key="card.id" class="q-pb-md">
-      <Card :icon="card.icon" :caption="card.caption" />
+    <div
+      v-for="card in cards"
+      :key="card.id"
+      class="q-pb-md"
+      @click="showFullSizeCard(card)"
+    >
+      <Card
+        :icon="card.icon"
+        :caption="card.caption" />
     </div>
+
+    <q-dialog v-model="showFullSizeCardDialog" full-height full-width>
+      <CardFullSize :card="fullSizeCard" />
+    </q-dialog>
   </q-page>
 </template>
 
 <script>
 import Card from 'components/Card';
+import CardFullSize from 'components/CardFullSize';
 
 export default {
   name: 'PageIndex',
 
   components: {
-    Card
+    Card, CardFullSize
   },
 
-  data () {
+  methods: {
+    showFullSizeCard(selectedCard) {
+      this.setFullSizeCard(selectedCard);
+      this.showFullSizeCardDialog = true;
+    },
+
+    setFullSizeCard(card) {
+      this.fullSizeCard = card;
+    }
+  },
+
+  data() {
     return {
+      showFullSizeCardDialog: false,
+
+      fullSizeCard: {
+        id: 1,
+        icon: 'free_breakfast',
+        caption: "Let's make a break"
+      },
+
       cards: [
         {
           id: 1,
