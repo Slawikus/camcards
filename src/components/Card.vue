@@ -1,48 +1,34 @@
 <template>
-  <q-item
-    clickable
-    tag="a"
-    target="_blank"
-    :href="link"
-  >
-    <q-item-section
-      v-if="icon"
-      avatar
-    >
-      <q-icon :name="icon" />
-    </q-item-section>
+  <q-list bordered>
+    <q-item clickable v-ripple>
+      <q-item-section avatar>
+        <q-icon color="primary" :name="iconPrefix + icon" />
+      </q-item-section>
 
-    <q-item-section>
-      <q-item-label>{{ title }}</q-item-label>
-      <q-item-label caption>
-        {{ caption }}
-      </q-item-label>
-    </q-item-section>
-  </q-item>
+      <q-item-section>{{ caption }}</q-item-section>
+    </q-item>
+  </q-list>
 </template>
 
 <script>
 export default {
-  name: 'EssentialLink',
+  name: 'Card',
+
   props: {
-    title: {
+    icon: {
       type: String,
       required: true
     },
 
     caption: {
       type: String,
-      default: ''
+      required: true
     },
+  },
 
-    link: {
-      type: String,
-      default: '#'
-    },
-
-    icon: {
-      type: String,
-      default: ''
+  data() {
+    return {
+      iconPrefix: 'o_'
     }
   }
 }
