@@ -92,8 +92,8 @@ module.exports = function (ctx) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'Camcards',
-        short_name: 'Camcards',
+        name: 'CamCards',
+        short_name: 'CamCards',
         description: 'Tell feedback to your video conferencing peers visually',
         display: 'standalone',
         orientation: 'portrait',

@@ -2,7 +2,7 @@
   "name": "camcards",
   "version": "0.0.1",
   "description": "Tell feedback to your video conferencing peers visually",
-  "productName": "Camcards",
+  "productName": "CamCards",
   "cordovaId": "cards.camcards.app",
   "capacitorId": "",
   "author": "Slawa Gladkov <svyatoslav.gladkov@gmail.com>",
